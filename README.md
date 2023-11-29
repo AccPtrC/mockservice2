@@ -33,4 +33,25 @@ A Fiori application.
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
+#### How to setup a mockservice in SAP BAS by Peter Carandang
+
+1) copy index.html
+2) paste in test folder as mockService.html
+3) In mockService.html, do the following changes:
+-> change src value to "https://sapui5.hana.ondemand.com/1.120.1/resources/sap-ui-core.js" or whichever is the latest version
+-> in data-sap-ui-resourceroots, change "./" to "../"
+-> in data-sap-ui-oninit, change sap/ui/core/ComponentSupport to the location of your initMockServer file or where it would be
+4) Create your localService folder
+5) In the local service folder, create your initMockServer.js
+6) In the local service folder, add your metadata.xml file
+7) In the local service folder, create a mockdata folder
+8) In your mockdata folder, create your mock data here as .json file. Name of the .json file is the EntitySet
+9) Go to Run Configurations
+10) Select Create Configruation
+11) For the new Configuration, select the following
+-> Filename shouldbe test/mockServer.html
+-> Run with mockData should be checked
+12) Go to the Terminal (and in the root folder). Type "npm install" and Enter
+13) In the run configuration, click the Run button of the created run configuration
+
 
